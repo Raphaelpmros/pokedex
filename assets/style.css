@@ -1,99 +1,110 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 #device {
-    width: 30rem;
-    height: 25rem;
-    background-color: red;
-    border-radius: 2rem;
-    position: relative;
-    margin: 4rem auto;
-    border: 0.3rem solid black;
+  width: 30rem;
+  height: 50rem;
+  background-color: red;
+  border-radius: 2rem;
+  position: relative;
+  margin: 4rem auto;
+  border: 0.3rem solid black;
+  box-shadow: -5px 8px 0 #222, -9px 12px 0 #000;
 }
 
-#borderScreen{
-    width: 25rem;
-    height: 14rem;
-    border: 4rem solid lightgrey;
-    position: absolute;
-    border-radius: 0.5rem;
-    top: 2.5rem;
-    left: 2.3rem;
+#borderScreen {
+  width: 25rem;
+  height: 20rem;
+  border: 4rem solid rgb(158, 158, 158);
+  position: absolute;
+  border-radius: 0.5rem;
+  top: 3.5rem;
+  left: 2.3rem;
+  box-shadow: -3px 4px 0 #222, -5px 7px 0 #000;
 }
 
 #screen {
-    background-image: url(img/background.png);
-    background-size: cover;
-    width: 25rem;
-    height: 14rem;
-    background-color: white;
-    border: 0.25rem solid black;
-    border-radius: 0.5rem;
-    position: absolute;
-    top: -6rem;
-    left: -4rem;
+  background-image: url(img/background.png);
+  background-size: cover;
+  width: 20rem;
+  height: 14rem;
+  background-color: white;
+  border: 0.25rem solid black;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: -1rem;
+  left: -1.5rem;
 }
 
 #buttonShiny {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    position: absolute;
-    background-color: yellow;
-    left: 2.2rem;
-    top: 17rem;
-}
-
-#buttonPrevious {
-    width: 6rem;
-    height: 3rem;
-    border-radius: 10%;
-    position: absolute;
-    background-color: lightblue;
-    left: 8.7rem;
-    top: 21rem;
-}
-
-#buttonNext {
-    width: 6rem;
-    height: 3rem;
-    border-radius: 10%;
-    position: absolute;
-    background-color: lightblue;
-    left: 16rem;
-    top: 21rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: yellow;
+  left: 20rem;
+  top: 33rem;
+  box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
 }
 
 #buttonStatus {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    position: absolute;
-    background-color: blue;
-    left: 24.5rem;
-    top: 17rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgb(64, 64, 252);
+  left: 24rem;
+  top: 30rem;
+  box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
 }
 
-#searchButton{
-    width: 2rem;
-    height: 1.75rem;
-    border-radius: 10%;
-    position: absolute;
-    background-color: darkslategrey;
-    left: 21.8rem;
-    top: 17.6rem;
+#buttonPrevious {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 10%;
+  position: absolute;
+  background-color: darkslategrey;
+  left: 4rem;
+  top: 32rem;
+  box-shadow: 0 3px 0 #222, 0 6px 0 #000;
+}
+
+#buttonNext {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 10%;
+  position: absolute;
+  background-color: darkslategrey;
+  left: 8rem;
+  top: 32rem;
+  box-shadow: 0 3px 0 #222, 0 6px 0 #000;
+}
+
+.button:active {
+  box-shadow: inset -4px 4px 0 #222;
+  font-size: 0.9rem;
+}
+
+#searchButton {
+  width: 2rem;
+  height: 1.75rem;
+  border-radius: 10%;
+  position: absolute;
+  background-color: darkslategrey;
+  left: 21.8rem;
+  top: 25rem;
 }
 
 #game {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-#buttonNext:hover{
+/* #buttonNext:hover{
     background-color: rgb(51, 101, 117);
 }
 
@@ -107,10 +118,10 @@
 
 #buttonStatus:hover{
     background-color: rgb(0, 0, 139);
-}
+} */
 
-div #search{
-    position: absolute;
-    left: 6rem;
-    top: 17.6rem;
+div #search {
+  position: absolute;
+  left: 6rem;
+  top: 25rem;
 }
