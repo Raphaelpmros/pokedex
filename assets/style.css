@@ -11,6 +11,11 @@ body {
   text-align: center;
   background: linear-gradient(to bottom, #3eff88, #b5faff);
   min-height: 100vh;
+  padding-right: 1rem;
+}
+
+section {
+  padding: 1rem;
 }
 
 #device {
@@ -21,7 +26,7 @@ body {
   position: relative;
   margin: 4rem auto;
   border: 0.3rem solid black;
-  box-shadow: -5px 8px 0 #222, -9px 12px 0 #000;
+  box-shadow: -5px 8px 0 #222, -8px 10px 0 #000;
 }
 
 #borderScreen {
@@ -38,14 +43,29 @@ body {
 #screen {
   background-image: url(img/background.png);
   background-size: cover;
-  width: 20rem;
+  width: 100%;
+  max-width: 26.5rem;
   height: 14rem;
   background-color: white;
   border: 0.25rem solid black;
   border-radius: 0.5rem;
   position: absolute;
   top: -1rem;
-  left: -1.5rem;
+}
+
+.pokemonData {
+  position: absolute;
+  font-weight: 600;
+  color: #353535;
+  top: 115%;
+  right: -2rem;
+  font-size: clamp(8px, 5vw, 25px);
+  z-index: 1;
+}
+
+.pokemonName {
+  color: #3a444d;
+  text-transform: capitalize;
 }
 
 #buttonShiny {
@@ -126,5 +146,5 @@ form {
   bottom: 35%;
   left: 53%;
   transform: translate(-63%, 20%);
-  height: 60%;
+  height: 50%;
 }

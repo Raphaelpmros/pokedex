@@ -12,23 +12,30 @@
 </head>
 
 <body>
-    <div id="device">
-        <div id="borderScreen">
-            <div id="screen">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/6.gif" alt="pokemon" class="pokemonImage">
-                <h1></h1>
-                <div id="game"></div>
+    <section>
+        <div id="device">
+            <div id="borderScreen">
+                <h1 class="pokemonData">
+                    <span class="pokemonNumber"></span> -
+                    <span class="pokemonName"></span>
+                </h1>
+                <div id="screen">
+                    <img src="" alt="pokemon" class="pokemonImage">
+                    <div id="game"></div>
+                </div>
             </div>
+            <form class="formPokemon" id="formPokemon">
+                <input type="search" id="searchInput" class="inputSearch" placeholder="Name or Number" required>
+            </form>
+            <button class="button" id="buttonShiny">&#10029;&#10029;&#10029;</button>
+            <button id="buttonPrevious">&#8656;</button>
+            <button id="buttonNext">&#8658;</button>
+            <button id="buttonStatus">&#9776;</button>
+            <button id="searchButton">&#128269;</button>
         </div>
-        <form class="form">
-            <input type="search" class="input_search" placeholder="Name or Number" required>
-        </form>
-        <button class="button" id="buttonShiny">&#10029;&#10029;&#10029;</button>
-        <button id="buttonPrevious">&#8656;</button>
-        <button id="buttonNext">&#8658;</button>
-        <button id="buttonStatus">&#9776;</button>
-        <button id="searchButton">&#128269;</button>
-    </div>
+    </section>
+
+    <script src="src/pokedex.js"></script>
 </body>
 
 </html>
