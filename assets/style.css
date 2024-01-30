@@ -75,6 +75,7 @@ section {
 .pokemonName {
   color: #3a444d;
   text-transform: capitalize;
+  overflow: scroll;
 }
 
 #buttonShiny {

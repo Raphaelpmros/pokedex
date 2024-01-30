@@ -99,6 +99,9 @@ const renderPokemon = async (pokemon) => {
 
     shiny.addEventListener("click", shinyEventListener);
   }
+  if (pokeName.textContent.length > 10) {
+    pokeName.style.fontSize = "1.5rem";
+  }
 };
 
 form.addEventListener("submit", (event) => {
