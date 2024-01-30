@@ -34,10 +34,17 @@ const renderPokemon = async (pokemon) => {
   if (data) {
     pokeName.innerHTML = data.name;
     pokeNumber.innerHTML = data.id;
-    pokeImage.src =
-      data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
-        "front_default"
-      ];
+    if (searchPokemon <= 649) {
+      pokeImage.src =
+        data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
+          "front_default"
+        ];
+    } else {
+      pokeImage.src =
+        data["sprites"]["versions"]["generation-v"]["black-white"][
+          "front_default"
+        ];
+    }
     searchPokemon = data.id;
 
     if (shinyEventListener) {
@@ -46,16 +53,30 @@ const renderPokemon = async (pokemon) => {
 
     shinyEventListener = function () {
       if (!shinyClick) {
-        pokeImage.src =
-          data["sprites"]["versions"]["generation-v"]["black-white"][
-            "animated"
-          ]["front_shiny"];
+        if (searchPokemon < 650) {
+          pokeImage.src =
+            data["sprites"]["versions"]["generation-v"]["black-white"][
+              "animated"
+            ]["front_shiny"];
+        } else {
+          pokeImage.src =
+            data["sprites"]["versions"]["generation-v"]["black-white"][
+              "front_shiny"
+            ];
+        }
         shinyClick = true;
       } else {
-        pokeImage.src =
-          data["sprites"]["versions"]["generation-v"]["black-white"][
-            "animated"
-          ]["front_default"];
+        if (searchPokemon < 650) {
+          pokeImage.src =
+            data["sprites"]["versions"]["generation-v"]["black-white"][
+              "animated"
+            ]["front_default"];
+        } else {
+          pokeImage.src =
+            data["sprites"]["versions"]["generation-v"]["black-white"][
+              "front_default"
+            ];
+        };
         shinyClick = false;
       }
     };
