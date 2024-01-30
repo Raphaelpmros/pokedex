@@ -12,9 +12,8 @@ const pokeNumber = document.querySelector(".pokemonNumber");
 let searchPokemon = 1;
 
 let shinyClick = false;
-let statusClick = false;
 
-let shinyEventListener = null; // inicializar como nulo
+let shinyEventListener = null;
 
 const fetchPokemon = async (pokemon) => {
   pokeName.innerHTML = "Loading...";
@@ -63,12 +62,15 @@ const renderPokemon = async (pokemon) => {
 
     shiny.addEventListener("click", shinyEventListener);
 
+    shiny.addEventListener("click", shinyEventListener);
+
     const pokemonInfo = {
       number: data.id,
       name: data.name,
-      image: data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
-        "front_default"
-      ],
+      image:
+        data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
+          "front_default"
+        ],
       height: data.height * 10 + " cm",
       weight: data.weight / 10 + " kg",
       types: data.types.map((type) => type.type.name),
@@ -85,6 +87,17 @@ const renderPokemon = async (pokemon) => {
     pokeNumber.innerHTML = "";
     pokeImage.src = "assets/img/Ash.gif";
     pokeName.style.fontSize = "1rem";
+    pokeStatus.disabled = true;
+    shiny.disable = true;
+    if (shinyEventListener) {
+      shiny.removeEventListener("click", shinyEventListener);
+    }
+
+    shinyEventListener = function () {
+      console.log("Pokémon não encontrado. Botão shiny desativado.");
+    };
+
+    shiny.addEventListener("click", shinyEventListener);
   }
 };
 
@@ -110,28 +123,32 @@ previous.addEventListener("click", () => {
 });
 
 search.addEventListener("click", () => {
+  if (input.value) {
     form.dispatchEvent(new Event("submit"));
     shinyClick = false;
-})
+  }
+});
 
-const modal = new bootstrap.Modal(document.getElementById('pokemonModal'), { keyboard: false });
+const modal = new bootstrap.Modal(document.getElementById("pokemonModal"), {
+  keyboard: false,
+});
 
 function showModal(pokemon) {
-  const modalLabel = document.getElementById('modalLabel');
-  const modalImage = document.getElementById('modalImage');
-  const modalHeight = document.getElementById('modalHeight');
-  const modalWeight = document.getElementById('modalWeight');
-  const modalTypes = document.getElementById('modalTypes');
-  const modalAbilities = document.getElementById('modalAbilities');
-  const modalMoves = document.getElementById('modalMoves');
+  const modalLabel = document.getElementById("modalLabel");
+  const modalImage = document.getElementById("modalImage");
+  const modalHeight = document.getElementById("modalHeight");
+  const modalWeight = document.getElementById("modalWeight");
+  const modalTypes = document.getElementById("modalTypes");
+  const modalAbilities = document.getElementById("modalAbilities");
+  const modalMoves = document.getElementById("modalMoves");
 
   modalLabel.textContent = `${pokemon.number} - ${pokemon.name}`;
   modalImage.src = pokemon.image;
   modalHeight.textContent = pokemon.height;
   modalWeight.textContent = pokemon.weight;
-  modalTypes.textContent = pokemon.types.join(', ');
-  modalAbilities.textContent = pokemon.abilities.join(', ');
-  modalMoves.textContent = pokemon.moves.join(', ');
+  modalTypes.textContent = pokemon.types.join(", ");
+  modalAbilities.textContent = pokemon.abilities.join(", ");
+  modalMoves.textContent = pokemon.moves.join(", ");
 
   modal.show();
 }
