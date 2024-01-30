@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Oxanium", cursive;
+}
+
+body {
+  text-align: center;
+  background: linear-gradient(to bottom, #3eff88, #b5faff);
+  min-height: 100vh;
 }
 
 #device {
@@ -94,7 +103,7 @@
   border-radius: 10%;
   position: absolute;
   background-color: darkslategrey;
-  left: 21.8rem;
+  left: 19.8rem;
   top: 25rem;
   box-shadow: 0 2px 0 #222, 0 4px 0 #000;
 }
@@ -105,25 +114,17 @@
   position: relative;
 }
 
-/* #buttonNext:hover{
-    background-color: rgb(51, 101, 117);
-}
-
-#buttonPrevious:hover{
-    background-color: rgb(51, 101, 117);
-}
-
-#buttonShiny:hover{
-    background-color: gold;
-}
-
-#buttonStatus:hover{
-    background-color: rgb(0, 0, 139);
-} */
-
 form {
   position: absolute;
-  left: 6rem;
+  left: 8rem;
   top: 25rem;
   box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
+}
+
+.pokemonImage {
+  position: absolute;
+  bottom: 35%;
+  left: 53%;
+  transform: translate(-63%, 20%);
+  height: 60%;
 }
