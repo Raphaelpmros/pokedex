@@ -31,20 +31,13 @@ const fetchPokemon = async (pokemon) => {
 const renderPokemon = async (pokemon) => {
   const data = await fetchPokemon(pokemon);
 
-  if (data) {
+  if (data && pokemon < 650) {
     pokeName.innerHTML = data.name;
     pokeNumber.innerHTML = data.id;
-    if (searchPokemon <= 649) {
-      pokeImage.src =
-        data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
-          "front_default"
-        ];
-    } else {
-      pokeImage.src =
-        data["sprites"]["versions"]["generation-v"]["black-white"][
-          "front_default"
-        ];
-    }
+    pokeImage.src =
+      data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
+        "front_default"
+      ];
     searchPokemon = data.id;
 
     if (shinyEventListener) {
@@ -53,30 +46,16 @@ const renderPokemon = async (pokemon) => {
 
     shinyEventListener = function () {
       if (!shinyClick) {
-        if (searchPokemon < 650) {
-          pokeImage.src =
-            data["sprites"]["versions"]["generation-v"]["black-white"][
-              "animated"
-            ]["front_shiny"];
-        } else {
-          pokeImage.src =
-            data["sprites"]["versions"]["generation-v"]["black-white"][
-              "front_shiny"
-            ];
-        }
+        pokeImage.src =
+          data["sprites"]["versions"]["generation-v"]["black-white"][
+            "animated"
+          ]["front_shiny"];
         shinyClick = true;
       } else {
-        if (searchPokemon < 650) {
-          pokeImage.src =
-            data["sprites"]["versions"]["generation-v"]["black-white"][
-              "animated"
-            ]["front_default"];
-        } else {
-          pokeImage.src =
-            data["sprites"]["versions"]["generation-v"]["black-white"][
-              "front_default"
-            ];
-        };
+        pokeImage.src =
+          data["sprites"]["versions"]["generation-v"]["black-white"][
+            "animated"
+          ]["front_default"];
         shinyClick = false;
       }
     };
@@ -103,6 +82,9 @@ const renderPokemon = async (pokemon) => {
       showModal(pokemonInfo);
       modal.show();
     });
+    if (pokeName.textContent.length > 10) {
+      pokeName.style.fontSize = "1.5rem";
+    }
   } else {
     pokeName.innerHTML = "Ash didn't found this pokemon yet";
     pokeNumber.innerHTML = "";
@@ -119,9 +101,6 @@ const renderPokemon = async (pokemon) => {
     };
 
     shiny.addEventListener("click", shinyEventListener);
-  }
-  if (pokeName.textContent.length > 10) {
-    pokeName.style.fontSize = "1.5rem";
   }
 };
 
