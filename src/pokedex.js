@@ -36,7 +36,7 @@ const fetchPokemon = async (pokemon) => {
 const renderPokemon = async (pokemon) => {
   const data = await fetchPokemon(pokemon);
 
-  if (data && pokemon < 650) {
+  if (data) {
     pokeName.innerHTML = data.name;
     pokeNumber.innerHTML = data.id;
     pokeImage.src =
