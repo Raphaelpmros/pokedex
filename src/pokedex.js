@@ -1,13 +1,18 @@
+const audio = document.querySelector('audio');
 const next = document.querySelector("#buttonNext");
 const form = document.querySelector("#formPokemon");
 const input = document.querySelector(".inputSearch");
 const shiny = document.querySelector("#buttonShiny");
-const pokeStatus = document.querySelector("#buttonStatus");
 const search = document.querySelector("#searchButton");
 const pokeName = document.querySelector(".pokemonName");
+const playButton = document.querySelector('#playButton');
 const pokeImage = document.querySelector(".pokemonImage");
+const volumeUp = document.querySelector('#volumeUpButton');
+const pauseButton = document.querySelector('#pauseButton');
 const previous = document.querySelector("#buttonPrevious");
+const pokeStatus = document.querySelector("#buttonStatus");
 const pokeNumber = document.querySelector(".pokemonNumber");
+const volumeDown = document.querySelector('#volumeDownButton');
 
 let searchPokemon = 1;
 
@@ -157,3 +162,25 @@ function showModal(pokemon) {
 }
 
 renderPokemon(searchPokemon);
+
+playButton.addEventListener('click', () => {
+  audio.play();
+});
+
+pauseButton.addEventListener('click', () => {
+  audio.pause();
+});
+
+volumeUp.addEventListener('click', () => {
+  audio.volume += 0.1;
+  if (audio.volume > 1) {
+    audio.volume = 1;
+  }
+});
+
+volumeDown.addEventListener('click', () => {
+  audio.volume -= 0.1;
+  if (audio.volume < 0) {
+    audio.volume = 0;
+  }
+});

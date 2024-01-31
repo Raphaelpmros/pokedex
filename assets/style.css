@@ -107,7 +107,7 @@ section {
   position: absolute;
   background-color: darkslategrey;
   left: 4rem;
-  top: 32rem;
+  top: 32.4rem;
   box-shadow: 0 3px 0 #222, 0 6px 0 #000;
 }
 
@@ -118,8 +118,30 @@ section {
   position: absolute;
   background-color: darkslategrey;
   left: 8rem;
-  top: 32rem;
+  top: 32.4rem;
   box-shadow: 0 3px 0 #222, 0 6px 0 #000;
+}
+
+#volumeUpButton {
+  width: 2.3rem;
+  height: 3.3rem;
+  border-radius: 10%;
+  position: absolute;
+  background-color: darkslategrey;
+  left: 7rem;
+  top: 28.8rem;
+  box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
+}
+
+#volumeDownButton {
+  width: 2.3rem;
+  height: 3.3rem;
+  border-radius: 10%;
+  position: absolute;
+  background-color: darkslategrey;
+  left: 6.8rem;
+  top: 34.7rem;
+  box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
 }
 
 .button:active {
@@ -157,4 +179,26 @@ form {
   left: 53%;
   transform: translate(-63%, 20%);
   height: 50%;
+}
+
+button.music {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  background-color: darkslategrey;
+  height: 1.4rem;
+  width: 3.8rem;
+  border-radius: 20%;
+  box-shadow: -1.5px 2px 0 #222, -2.5px 4px 0 #000;
+}
+
+button#playButton {
+  left: 16rem;
+  top: 45rem;
+}
+
+button#pauseButton {
+  left: 10rem;
+  top: 45rem;
 }
